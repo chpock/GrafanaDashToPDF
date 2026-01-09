@@ -27,10 +27,10 @@ COPY grafana_pdf.js server.js logger.js generate-pdf.sh ./
 
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
-RUN groupadd -g 1000 pdfgenerator \
-    && useradd -m -u 1000 -g pdfgenerator pdfgenerator \
+RUN groupadd -g 1001 pdfgenerator \
+    && useradd -m -u 1001 -g pdfgenerator pdfgenerator \
     && chown -R pdfgenerator:pdfgenerator /usr/src/app
-    
+
 USER pdfgenerator
 
 EXPOSE 3001
