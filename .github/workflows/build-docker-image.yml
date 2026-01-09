@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: docker.io # Or any other
-  IMAGE_NAME: dockerhub-username/repository
+  IMAGE_NAME: chpock/grafana-dash-to-pdf
 
 jobs:
   build:
