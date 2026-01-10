@@ -57,7 +57,8 @@ app.post('/generate-pdf', (req, res) => {
     script.on('message', (message) => {
       if (message.success) {
         const pdfPath = message.path;
-        const pdfUrl = `${req.protocol}://${req.get('host')}/output/${path.basename(pdfPath)}`;
+        // const pdfUrl = `${req.protocol}://${req.get('host')}/output/${path.basename(pdfPath)}`;
+        const pdfUrl = `https://${req.get('host')}/output/${path.basename(pdfPath)}`;
         logger.info('PDF generated successfully: %s', pdfUrl);
         res.json({ pdfUrl });
       } else {
